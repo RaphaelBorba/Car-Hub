@@ -1,16 +1,19 @@
 "use client"
+
+import { CustomButtonProps } from "@/interfaces"
 import Image from "next/image"
 
-export default function CustomButton(){
+export default function CustomButton({ title, containerStyles, handleClick }: CustomButtonProps) {
 
-    return(
+    return (
         <button
-        disabled={false}
-        type={"button"}
-        className={`custom-btn`}
-        onClick={()=>{}}>
+            disabled={false}
+            type={"button"}
+            className={`custom-btn ${containerStyles}`}
+            onClick={handleClick}
+        >
             <span className={`flex-1`}>
-                Title
+                {title}
             </span>
         </button>
     )
