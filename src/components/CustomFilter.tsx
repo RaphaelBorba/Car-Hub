@@ -2,9 +2,9 @@ import { CustomFilterProps } from "@/interfaces";
 
 
 
-export default function CustomFilter({ title}:CustomFilterProps){
+export default function CustomFilter({ title }: CustomFilterProps) {
 
-    return(
+    return (
         <div></div>
     )
 }

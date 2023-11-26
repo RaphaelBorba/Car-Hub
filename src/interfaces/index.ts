@@ -1,6 +1,6 @@
 import { Dispatch, MouseEventHandler, SetStateAction } from "react";
 
-export interface CustomButtonProps{
+export interface CustomButtonProps {
     title: string,
     containerStyles?: string,
     btnType?: "button" | "submit",
@@ -8,12 +8,12 @@ export interface CustomButtonProps{
 }
 
 
-export interface CustomFilterProps{
-    title:string
+export interface CustomFilterProps {
+    title: string
 }
 
-export interface SearchManufacturerProps{
+export interface SearchManufacturerProps {
 
-    setManufacturer:Dispatch<SetStateAction<string>>,
-    manufacturer:string
+    setManufacturer: (manufacturer: string) => void,
+    manufacturer: string
 }
