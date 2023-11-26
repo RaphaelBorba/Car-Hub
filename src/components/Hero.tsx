@@ -22,7 +22,12 @@ export default function Hero() {
             </div>
             <div className="hero__image-container">
                 <div className="hero__image">
-                    <Image alt="" src={""} />
+                    <Image 
+                    alt="Hero_Image" 
+                    fill 
+                    src="/hero.png" 
+                    className="object-contain"/>
+                    <div className="hero__image-overlay"></div>
                 </div>
             </div>
         </div>
