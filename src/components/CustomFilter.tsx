@@ -18,7 +18,7 @@ export default function CustomFilter({ title, options }: CustomFilterProps) {
         const { value } = e
         const newPathname = updateSearchParams(title, value.toLowerCase())
 
-        router.push(newPathname, {scroll:false})
+        router.push(newPathname, { scroll: false })
     }
 
     return (

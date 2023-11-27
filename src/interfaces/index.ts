@@ -17,8 +17,8 @@ export interface CustomFilterProps {
 }
 
 interface OptionProps {
-    title:string,
-    value:string
+    title: string,
+    value: string
 }
 
 export interface SearchManufacturerProps {
@@ -43,18 +43,18 @@ export interface CarProps {
     year: number;
 }
 
-export interface CarCardProps{
+export interface CarCardProps {
     car: CarProps
 }
 
-export interface CarDetailsProps{
+export interface CarDetailsProps {
 
-    isOpen:boolean,
-    closeModal:()=>void,
+    isOpen: boolean,
+    closeModal: () => void,
     car: CarProps
 }
 
-export interface FilterProps{
+export interface FilterProps {
 
     manufacuterer: string,
     year: number,
@@ -63,7 +63,7 @@ export interface FilterProps{
     model: string,
 }
 
-export interface ShowMoreProps{
+export interface ShowMoreProps {
 
     pageNumber: number,
     isNext: boolean

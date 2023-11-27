@@ -4,9 +4,8 @@ import { CarProps } from "@/interfaces";
 import { fetchCars } from "@/utils";
 
 
-export default async function Home({ searchParams }) {
+export default async function Home({ searchParams }: { searchParams: any }) {
 
-  console.log(searchParams);
   const allCars = await fetchCars({
     manufacuterer: searchParams.manufacturer || "",
     year: searchParams.year || "2022",
@@ -43,8 +42,8 @@ export default async function Home({ searchParams }) {
               }
             </div>
             <ShowMore
-              pageNumber={(searchParams.limit || 10)/10}
-              isNext={(searchParams.limit||10) > allCars.length}
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > allCars.length}
             />
           </section>
           :
