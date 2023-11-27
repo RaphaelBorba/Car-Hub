@@ -13,6 +13,12 @@ export interface CustomButtonProps {
 
 export interface CustomFilterProps {
     title: string
+    options: OptionProps[]
+}
+
+interface OptionProps {
+    title:string,
+    value:string
 }
 
 export interface SearchManufacturerProps {
@@ -46,4 +52,13 @@ export interface CarDetailsProps{
     isOpen:boolean,
     closeModal:()=>void,
     car: CarProps
+}
+
+export interface FilterProps{
+
+    manufacuterer: string,
+    year: number,
+    fuel: string,
+    limit: number,
+    model: string,
 }
