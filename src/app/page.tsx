@@ -1,4 +1,5 @@
 import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from "@/components";
+import SearchField from "@/components/SearchField";
 import { fuels, yearsOfProduction } from "@/constants";
 import { CarProps } from "@/interfaces";
 import { fetchCars } from "@/utils";
@@ -14,6 +15,8 @@ export default async function Home({ searchParams }: { searchParams: any }) {
     model: searchParams.model || "",
   })
 
+  
+
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars
 
   return (
@@ -25,13 +28,8 @@ export default async function Home({ searchParams }: { searchParams: any }) {
           <h1 className="text-4xl font-extrabold"> Car Catalogue</h1>
           <p>Explore the cars you might like</p>
         </div>
-        <div className="home__filters">
-          <SearchBar />
-          <div className="home__filter-container">
-            <CustomFilter title="fuel" options={fuels} />
-            <CustomFilter title="year" options={yearsOfProduction} />
-          </div>
-        </div>
+        
+        <SearchField/>
 
         {!isDataEmpty
           ?

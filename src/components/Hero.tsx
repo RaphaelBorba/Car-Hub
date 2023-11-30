@@ -6,7 +6,8 @@ import { CustomButton } from "."
 export default function Hero() {
 
     const handleScroll = () => {
-
+        const element = document.querySelector("#discover")
+        if(element) element.scrollIntoView({behavior:'smooth'})
     }
 
     return (

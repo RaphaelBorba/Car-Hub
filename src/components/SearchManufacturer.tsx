@@ -30,6 +30,7 @@ export default function SearchManufacturer({ manufacturer, setManufacturer }: Se
                     </Combobox.Button>
                     <Combobox.Input
                         className="search-manufacturer__input"
+                        autoComplete="off"
                         placeholder="Volkswagen"
                         displayValue={(manufacturer: string) => manufacturer}
                         onChange={(e) => setQuery(e.target.value)}
@@ -41,7 +42,7 @@ export default function SearchManufacturer({ manufacturer, setManufacturer }: Se
                         leaveTo="opacity-0"
                         afterLeave={() => setQuery('')}
                     >
-                        <Combobox.Options>
+                        <Combobox.Options className="absolute bg-white z-10 w-full border">
                             {filteredManufacturer.length === 0 && query !== ""
                                 ?
                                 (

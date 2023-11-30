@@ -12,18 +12,33 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
     </button>
 )
 
-export default function SearchBar() {
+const ResetButton = ({ otherClasses, click }: { otherClasses: string, click: ()=>void }) => (
+    <button type="button" className={`-ml-3 z-10 ${otherClasses}`} onClick={click}>
+        <Image src="/reset.svg" alt="reset" width={30} height={30} className="object-contain " />
+    </button>
+)
+
+export default function SearchBar({setReseted, reseted}:{setReseted:(any:boolean)=>void, reseted:boolean}) {
 
     const [manufacturer, setManufacturer] = useState<string>("")
     const [model, setModel] = useState("")
     const router = useRouter()
 
     const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+
         e.preventDefault()
 
-        if (manufacturer === "" || model === "") return alert("Please fill in the search bar")
+        if (manufacturer === "" && model === "") return alert("Please fill in the search bar")
 
         updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase())
+    }
+
+    const handleReset = () => {
+        setManufacturer("")
+        setModel("")
+        setReseted(!reseted)
+        const url = window.location.origin
+        router.push(url, { scroll: false })
     }
 
     const updateSearchParams = (model: string, manufacturer: string) => {
@@ -64,8 +79,11 @@ export default function SearchBar() {
                 />
 
                 <SearchButton otherClasses="sm:hidden" />
+                <ResetButton click={handleReset} otherClasses="sm:hidden ml-4" />
+
             </div>
             <SearchButton otherClasses="max-sm:hidden" />
+            <ResetButton click={handleReset} otherClasses="max-sm:hidden ml-4" />
         </form>
     )
 }

@@ -12,8 +12,10 @@ export interface CustomButtonProps {
 
 
 export interface CustomFilterProps {
-    title: string
-    options: OptionProps[]
+    title: string,
+    options: OptionProps[],
+    span: OptionProps,
+    setSpan: Dispatch<SetStateAction<OptionProps>>,
 }
 
 interface OptionProps {
