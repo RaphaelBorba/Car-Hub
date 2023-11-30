@@ -2,6 +2,8 @@
 
 Welcome to Car Hub! This project was created as a learning experience for mastering technologies like Next.js, React, and Tailwind CSS. Our goal is to provide users with a seamless and dynamic experience when searching for and booking cars.
 
+Deply: <a src="https://car-hub-sandy.vercel.app/">car-hub-sandy.vercel.app</a>
+
 ## Key Features
 
 - **Next.js:** Utilizing the power of Next.js for a fast and efficient React application.
